@@ -6,7 +6,7 @@
 package mg.itu.tp1customersarobidy.entity;
 
 /**
- *
+ * Un client.
  * @author Sarobidy
  */
 import java.io.Serializable;
