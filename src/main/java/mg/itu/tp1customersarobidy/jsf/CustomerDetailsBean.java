@@ -10,6 +10,9 @@ import java.io.Serializable;
 import jakarta.inject.Inject;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
+import java.util.List;
+import mg.itu.tp1customersarobidy.entity.Discount;
+import mg.itu.tp1customersarobidy.service.DiscountManager;
 /**
  * Backing bean pour la page customerDetails.xhtml.
  * @author Sarobidy
@@ -22,6 +25,8 @@ public class CustomerDetailsBean implements Serializable {
 
   @Inject
   private CustomerManager customerManager;
+  @Inject
+  private DiscountManager discountManager;
 
   public int getIdCustomer() {
     return idCustomer;
@@ -54,4 +59,11 @@ public class CustomerDetailsBean implements Serializable {
   public void loadCustomer() {
     this.customer = customerManager.findById(idCustomer);
   }
+  
+    /**
+     * Retourne la liste de tous les Discount.
+     */
+    public List<Discount> getDiscounts() {
+        return discountManager.getAllDiscounts();
+    }
 }
